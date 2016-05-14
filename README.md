@@ -87,6 +87,14 @@ wpa-psk “YOUR PASSWORD”
 sudo /etc/init.d/networking restart
 ```
 
+Then
+
+```bash
+ifconfig
+```
+
+to check wlan0's IP address
+
 ## For pixController
 ```bash
 sudo install python-dev python-pip
