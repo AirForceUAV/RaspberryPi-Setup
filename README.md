@@ -64,6 +64,29 @@ sudo rpi-update
 sudo reboot
 ```
 
+## Config a Wi-Fi dongle
+
+```bash
+sudo nano /etc/network/interfaces
+```
+
+modify content like below:
+
+```bash
+auto lo
+iface lo inet loopback
+iface eth0 inet dhcp
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+wpa-ssid “YOUR SSID”
+wpa-psk “YOUR PASSWORD”
+```
+
+```bash
+sudo /etc/init.d/networking restart
+```
+
 ## For pixController
 ```bash
 sudo install python-dev python-pip
