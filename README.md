@@ -1,2 +1,74 @@
 # RaspberryPi-Setup
 Be Companion Computer for Pixhawk
+
+Hardware:Raspberry Pi 3
+
+OS:[RASPBIAN JESSIE LITE (2016-05-10)](https://www.raspberrypi.org/downloads/raspbian/)
+
+Note:[INSTALLING OPERATING SYSTEM IMAGES](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
+
+## Common
+
+Using
+
+```bash
+sudo raspi-config
+```
+
+to change locale/time etc.
+
+```bash
+sudo nano /etc/apt/sources.list
+```
+
+Replace the original address with USTC mirror
+
+```bash
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
+deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
+```
+
+```bash
+sudo apt-get update
+```
+
+```bash
+sudo apt-get upgrade
+```
+
+```bash
+sudo apt-get install rpi-update htop zsh git git-flow vim
+```
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+Then enter password to change to zsh or you need
+
+```bash
+chsh -s /bin/zsh
+``` 
+
+and reboot later
+
+```bash
+curl http://j.mp/spf13-vim3 -L -o - | sh
+```
+
+```bash
+sudo rpi-update
+```
+
+```
+sudo reboot
+```
+
+## For pixController
+```bash
+sudo install python-dev python-pip
+```
+
+```
+sudo pip install paho-mqtt pymavlink mavproxy dronekit dronekit-sitl
+```
