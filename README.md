@@ -97,7 +97,7 @@ to check wlan0's IP address
 
 ## For pixController
 ```bash
-sudo install python-dev python-pip
+sudo apt-get install python-dev python-pip
 ```
 
 ```
