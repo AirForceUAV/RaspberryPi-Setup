@@ -101,5 +101,6 @@ sudo apt-get install python-dev python-pip
 ```
 
 ```
-sudo pip install paho-mqtt pymavlink mavproxy dronekit dronekit-sitl
+sudo pip install paho-mqtt pymavlink mavproxy dronekit dronekit-sitl 
+sudo pip install --pre azure
 ```
