@@ -104,4 +104,4 @@ sudo apt-get install python-dev python-pip
 sudo pip install paho-mqtt pymavlink mavproxy dronekit dronekit-sitl 
 sudo pip install --pre azure
 ```
-[Azure for python](https://github.com/Azure/azure-sdk-for-python)
+[Azure python SDK](https://github.com/Azure/azure-sdk-for-python)
