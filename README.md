@@ -97,7 +97,7 @@ to check wlan0's IP address
 
 ## For pixController
 ```bash
-sudo apt-get install python-dev python-pip
+sudo apt-get install python-dev python-pip git vim
 ```
 
 ```
@@ -105,3 +105,21 @@ sudo pip install paho-mqtt pymavlink mavproxy dronekit dronekit-sitl threadpool
 sudo pip install --pre azure
 ```
 [Azure python SDK](https://github.com/Azure/azure-sdk-for-python)
+
+##将公钥添加到GitHub上
+```bash
+ssh-keygen -t rsa -C "mengxz188@qq.com"     --在.ssh文件下产生公钥id_rsa.,pub 和私钥id_rsa
+
+ls -ah             --可以在用户目录下(/home/mengxz)看到隐藏文件 .ssh 文件
+cd ~/.ssh 
+cat id_rsa.pub     --复制公钥到github上
+```
+##修改dronekit-sitl模拟器默认下载地址
+```bash
+chmod 777 /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
+nano /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
+```
+http://dronekit-assets.s3.amazonaws.com/sitl->
+http://124.202.164.15/files/1234000007F2908A/dronekit-assets.s3.amazonaws.com/sitl
+
+
