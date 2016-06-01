@@ -124,15 +124,17 @@ http://124.202.164.15/files/1234000007F2908A/dronekit-assets.s3.amazonaws.com/si
 ##Git
 ```bash
 git clone git@github.com:AirForceUAV/pixController.git
-git branch -a       --查看所有分支
+git clone git@github.com:AirForceUAV/ObstacleAvoidance.git
+
+git branch -a       --查看所有分支(本地分支 和 远程分支)
 git checkout -b dev origin/dev    --关联本地分支与远程分支
 git checkout dev     --切换分支
 
 git add <file>
 git commit -m 'note'
-git push origin dev               --push 到远程分支
+git push origin dev   --push 到远程分支
 
-git pull
+git pull            --从远程仓库pull最新代码
 
 ```
 
