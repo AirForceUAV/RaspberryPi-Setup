@@ -109,9 +109,8 @@ sudo pip install --pre azure
 ##将公钥添加到GitHub上
 ```bash
 ssh-keygen -t rsa -C "mengxz188@qq.com"     --在.ssh文件下产生公钥id_rsa.,pub 和私钥id_rsa
-
-ls -ah             --可以在用户目录下(/home/mengxz)看到隐藏文件 .ssh 文件
 cd ~/.ssh 
+ls -a            --可以在用户目录下(/home/mengxz)看到隐藏文件 .ssh 文件
 cat id_rsa.pub     --复制公钥到github上
 ```
 ##修改dronekit-sitl模拟器默认下载地址
@@ -122,4 +121,18 @@ nano /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
 http://dronekit-assets.s3.amazonaws.com/sitl->
 http://124.202.164.15/files/1234000007F2908A/dronekit-assets.s3.amazonaws.com/sitl
 
+##Git
+```bash
+git clone git@github.com:AirForceUAV/pixController.git
+git branch -a       --查看所有分支
+git checkout -b dev origin/dev    --关联本地分支与远程分支
+git checkout dev     --切换分支
+
+git add <file>
+git commit -m 'note'
+git push origin dev               --push 到远程分支
+
+git pull
+
+```
 
