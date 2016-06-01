@@ -102,6 +102,7 @@ sudo apt-get install python-dev python-pip git vim
 
 ```
 sudo pip install paho-mqtt pymavlink mavproxy dronekit dronekit-sitl threadpool
+sudo pip install dronekit-sitl -UI
 sudo pip install --pre azure
 ```
 [Azure python SDK](https://github.com/Azure/azure-sdk-for-python)
@@ -115,8 +116,8 @@ cat id_rsa.pub     --复制公钥到github上
 ```
 ##修改dronekit-sitl模拟器默认下载地址
 ```bash
-chmod 777 /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
-nano /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
+sudo chmod 777 /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
+sudo vim /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
 ```
 http://dronekit-assets.s3.amazonaws.com/sitl->
 http://124.202.164.15/files/1234000007F2908A/dronekit-assets.s3.amazonaws.com/sitl
