@@ -114,14 +114,6 @@ cd ~/.ssh
 ls -a            --可以在用户目录下(/home/mengxz)看到隐藏文件 .ssh 文件
 cat id_rsa.pub     --复制公钥到github上
 ```
-##修改dronekit-sitl模拟器默认下载地址
-```bash
-sudo chmod 777 /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
-sudo vim /usr/local/lib/python2.7/dist-packages/dronekit_sitl/__init__.py
-```
-http://dronekit-assets.s3.amazonaws.com/sitl->
-http://124.202.164.15/files/1234000007F2908A/dronekit-assets.s3.amazonaws.com/sitl
-
 ##Git
 ```bash
 git clone git@github.com:AirForceUAV/pixController.git
