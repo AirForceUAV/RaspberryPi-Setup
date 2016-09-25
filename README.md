@@ -3,7 +3,7 @@ Be Companion Computer for Pixhawk
 
 Hardware:Raspberry Pi 3
 
-OS:[RASPBIAN JESSIE LITE (2016-05-10)](https://www.raspberrypi.org/downloads/raspbian/)
+OS:[RASPBIAN JESSIE LITE (2016-05-27)](https://www.raspberrypi.org/downloads/raspbian/)
 
 Note:[INSTALLING OPERATING SYSTEM IMAGES](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
 
@@ -37,7 +37,7 @@ sudo apt-get upgrade
 ```
 
 ```bash
-sudo apt-get install rpi-update htop zsh git git-flow vim
+sudo apt-get install rpi-update zsh git vim
 ```
 
 ```bash
@@ -51,10 +51,6 @@ chsh -s /bin/zsh
 ``` 
 
 and reboot later
-
-```bash
-curl http://j.mp/spf13-vim3 -L -o - | sh
-```
 
 ```bash
 sudo rpi-update
