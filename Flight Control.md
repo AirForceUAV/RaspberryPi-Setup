@@ -1,13 +1,13 @@
 # RaspberryPi For Flight Control
-Be Companion Computer for Pixhawk
+Be Companion Computer for Pixhawk or ACE ONE
 
-Hardware:Raspberry Pi 3 B
+Hardware: Raspberry Pi 3 B
 
 OS: [RASPBIAN JESSIE LITE (2016-09-23)](https://www.raspberrypi.org/downloads/raspbian/)
 
 Note: [INSTALLING OPERATING SYSTEM IMAGES](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
 
-Recommend using windows to write SD card
+Recommend using windows to write SD card for convenience
 
 ## Common
 
@@ -39,7 +39,7 @@ sudo apt-get upgrade
 ```
 
 ```bash
-sudo apt-get install rpi-update zsh git vim
+sudo apt-get install rpi-update zsh git vim uuid-runtime tmux
 ```
 
 ```bash
@@ -130,3 +130,48 @@ git pull            --从远程仓库pull最新代码
 
 ```
 
+## Golang
+Download latest ARM version golang from 
+[Golang Release Page](https://golang.org/dl/)
+
+```bash
+scp /Users/YogurtShen/Downloads/go1.7.1.linux-armv6l.tar.gz pi@192.168.1.16:~
+
+sudo tar -C /usr/local -xzf go1.7.1.linux-armv6l.tar.gz
+
+sudo vim .zshrc
+```
+
+Add two lines at bottom
+
+```bash
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/Go
+```
+
+```bash
+source .zshrc
+```
+
+Use below command to test
+
+```bash
+go version
+echo $GOPATH
+```
+
+Then create corresponding dirs
+
+```bash
+cd
+mkdir Go
+cd Go/
+mkdir src pkg bin
+cd src
+git clone git@github.com:AirForceUAV/DataProxy.git
+cd DataProxy
+git checkout -b develop origin/develop
+go get github.com/eclipse/paho.mqtt.golang
+go build
+./DataProxy fc
+```

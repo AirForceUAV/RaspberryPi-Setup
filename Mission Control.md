@@ -8,7 +8,7 @@ OS: [RASPBIAN JESSIE WITH PIXEL
 
 Note: [INSTALLING OPERATING SYSTEM IMAGES](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
 
-Recommend using windows to write SD card
+Recommend using windows to write SD card for convenience
 
 ## Common
 
@@ -79,6 +79,8 @@ Download latest ARM version electron from
 scp /Users/YogurtShen/Downloads/electron-v1.4.2-linux-arm.zip pi@192.168.1.16:~
 
 unzip electron-v1.4.2-linux-arm.zip
+
+./electron
 ```
 
 ## Golang
