@@ -175,3 +175,21 @@ go get github.com/eclipse/paho.mqtt.golang
 go build
 ./DataProxy fc
 ```
+
+## FFMPEG
+
+```bash
+git clone --depth=1 git://source.ffmpeg.org/ffmpeg.git
+cd ffmpeg
+./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree
+make -j4
+sudo make install
+```
+
+Plug in the USB camera
+
+```bash
+tmux
+ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 -f flv rtmp://video.airforceuav.com:1935/live/livestream
+Ctrl+B D
+```
