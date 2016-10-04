@@ -133,7 +133,7 @@ and add the line(at the bottom)
 
 ### Serial Aliases
 
-On Pi3 
+To summarise the ports on a Raspberry Pi 3 and be crystal clear:
 
 /dev/ttyAMA0 -> Bluetooth
 
@@ -143,6 +143,7 @@ On Pi3
 ls -l /dev
 ```
 and you will see something like this:   
+
 serial0->ttyS0  
 
 serial1->ttyAMA0
