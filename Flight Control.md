@@ -95,7 +95,7 @@ to check wlan0's IP address
 
 ## For pixController
 ```bash
-sudo apt-get install python-dev python-pip git vim
+sudo apt-get install python-dev python-pip git vim screen minicom
 ```
 
 ```python
@@ -128,6 +128,7 @@ sudo nano /boot/config.txt
 and add the line(at the bottom)
 
 `enable_uart=1`
+
 `core_freq=250`
 
 ### Serial Aliases
@@ -140,8 +141,9 @@ On Pi3
 ls -l /dev
 ```
 and you will see something like this:   
-	serial0->ttyS0  
-	serial1->ttyAMA0
+serial0->ttyS0  
+
+serial1->ttyAMA0
 
 ### Disabling the Console
 
@@ -173,8 +175,10 @@ Finally,you can check that it has worked by:
 ls -l /dev
 ```
 and you’ll see something like this:
-	serial0->ttyAMA0
-	serial1->ttyS0
+
+serial0->ttyAMA0
+
+serial1->ttyS0
 
 
 
