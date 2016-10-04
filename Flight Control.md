@@ -134,7 +134,9 @@ and add the line(at the bottom)
 ### Serial Aliases
 
 On Pi3 
+
 /dev/ttyAMA0 -> Bluetooth
+
 /dev/ttyS0   -> GPIO pins 14(Tx) and 15(Rx).
 
 ```bash
