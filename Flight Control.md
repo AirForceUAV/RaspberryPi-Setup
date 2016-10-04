@@ -99,14 +99,15 @@ sudo apt-get install python-dev python-pip git vim
 ```
 
 ```python
-sudo pip install [dronekit](http://python.dronekit.io/about/index.html)
-sudo pip install [dronekit-sitl](https://github.com/dronekit/dronekit-sitl)
-sudo pip install [paho-mqtt](https://pypi.python.org/pypi/paho-mqtt/1.1)
-sudo pip install [threadpool](https://pypi.python.org/pypi/threadpool/1.2.6)
-sudo pip install [pynmea2](https://github.com/Knio/pynmea2) 
-sudo pip install [apscheduler](https://apscheduler.readthedocs.io/en/latest/userguide.html)
+sudo pip install dronekit dronekit-sitl
+sudo pip install paho-mqtt
+sudo pip install threadpool
+sudo pip install pynmea2
+sudo pip install apscheduler
 ```
-[Azure python SDK](https://github.com/Azure/azure-sdk-for-python)
+[dronekit](http://python.dronekit.io/about/index.html) [dronekit-sitl](https://github.com/dronekit/dronekit-sitl)
+[paho-mqtt](https://pypi.python.org/pypi/paho-mqtt/1.1) [threadpool](https://pypi.python.org/pypi/threadpool/1.2.6)
+[pynmea2](https://github.com/Knio/pynmea2) [apscheduler](https://apscheduler.readthedocs.io/en/latest/userguide.html)
 
 ## Add Deploy Key to Github Repo
 
@@ -118,7 +119,7 @@ cat id_rsa.pub
 
 ## Enable serial port on Pi3
 
-# Enable
+### Enable
 
 Edit `config.txt`
 ```bash
@@ -129,7 +130,7 @@ and add the line(at the bottom)
 `enable_uart=1`
 `core_freq=250`
 
-# Serial Aliases
+### Serial Aliases
 
 On Pi3 
 /dev/ttyAMA0 -> Bluetooth
@@ -142,7 +143,7 @@ and you will see something like this:
 	serial0->ttyS0  
 	serial1->ttyAMA0
 
-# Disabling the Console
+### Disabling the Console
 
 If you are using the serial port for anything other than the console you need to disable it.
 
@@ -158,7 +159,7 @@ sudo nano /boot/cmdline.txt
 ```
 then remove the line: `console=serial0,115200` and save and reboot for changes to take effect.
 
-# Swapping the Serial Ports on Pi3
+### Swapping the Serial Ports on Pi3
 
 To use add the following line to the /boot/config.txt
 ```bash
