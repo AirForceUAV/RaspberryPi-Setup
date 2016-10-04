@@ -98,29 +98,91 @@ to check wlan0's IP address
 sudo apt-get install python-dev python-pip git vim
 ```
 
-```
-sudo pip install paho-mqtt pymavlink mavproxy dronekit dronekit-sitl threadpool
-sudo pip install dronekit-sitl -UI
-sudo pip install --pre azure
+```python
+sudo pip install [dronekit](http://python.dronekit.io/about/index.html)
+sudo pip install [dronekit-sitl](https://github.com/dronekit/dronekit-sitl)
+sudo pip install [paho-mqtt](https://pypi.python.org/pypi/paho-mqtt/1.1)
+sudo pip install [threadpool](https://pypi.python.org/pypi/threadpool/1.2.6)
+sudo pip install [pynmea2](https://github.com/Knio/pynmea2) 
+sudo pip install [apscheduler](https://apscheduler.readthedocs.io/en/latest/userguide.html)
 ```
 [Azure python SDK](https://github.com/Azure/azure-sdk-for-python)
 
 ## Add Deploy Key to Github Repo
 
 ```bash
-ssh-keygen -t rsa -C "mengxz188@qq.com"
+ssh-keygen -t rsa -C "{$email}"
 cd ~/.ssh 
 cat id_rsa.pub
 ```
 
-##Git
-```bash
-git clone git@github.com:AirForceUAV/pixController.git
-git clone git@github.com:AirForceUAV/ObstacleAvoidance.git
+## Enable serial port on Pi3
 
-git branch -a       --查看所有分支(本地分支 和 远程分支)
+# Enable
+
+Edit `config.txt`
+```bash
+sudo nano /boot/config.txt
+```
+and add the line(at the bottom)
+
+`enable_uart=1`
+`core_freq=250`
+
+# Serial Aliases
+
+On Pi3 
+/dev/ttyAMA0 -> Bluetooth
+/dev/ttyS0   -> GPIO pins 14(Tx) and 15(Rx).
+
+```bash
+ls -l /dev
+```
+and you will see something like this:   
+	serial0->ttyS0  
+	serial1->ttyAMA0
+
+# Disabling the Console
+
+If you are using the serial port for anything other than the console you need to disable it.
+
+```bash
+sudo systemctl stop serial-getty@ttyS0.service
+
+sudo systemctl disable serial-getty@ttyS0.service
+
+```
+You also need to remove the console from the cmdline.txt. If you edit this with:
+```bash
+sudo nano /boot/cmdline.txt
+```
+then remove the line: `console=serial0,115200` and save and reboot for changes to take effect.
+
+# Swapping the Serial Ports on Pi3
+
+To use add the following line to the /boot/config.txt
+```bash
+sudo nano /boot/config.txt
+```
+and add:
+`dtoverlay=pi3-miniuart-bt`
+
+Finally,you can check that it has worked by:
+```bash
+ls -l /dev
+```
+and you’ll see something like this:
+	serial0->ttyAMA0
+	serial1->ttyS0
+
+
+
+## Git command
+```bash
+git clone git@github.com:AirForceUAV/{$resposity}.git
+
 git checkout -b develop origin/develop    --关联本地分支与远程分支
-git checkout develop     --切换分支
+git branch -a    
 
 git add <file>
 git commit -m 'note'
