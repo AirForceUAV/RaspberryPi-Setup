@@ -95,7 +95,7 @@ to check wlan0's IP address
 
 ## For pixController
 ```bash
-sudo apt-get install python-dev python-pip git vim screen minicom
+sudo apt-get install python-dev python-pip git vim minicom
 ```
 
 ```python
@@ -112,7 +112,7 @@ sudo pip install apscheduler
 ## Add Deploy Key to Github Repo
 
 ```bash
-ssh-keygen -t rsa -C "{$email}"
+ssh-keygen -t rsa -C "YOUR_EMAIL"
 cd ~/.ssh 
 cat id_rsa.pub
 ```
@@ -122,9 +122,11 @@ cat id_rsa.pub
 ### Enable
 
 Edit `config.txt`
+
 ```bash
 sudo nano /boot/config.txt
 ```
+
 and add the line(at the bottom)
 
 `enable_uart=1`
@@ -142,6 +144,7 @@ To summarise the ports on a Raspberry Pi 3 and be crystal clear:
 ```bash
 ls -l /dev
 ```
+
 and you will see something like this:   
 
 serial0->ttyS0  
@@ -158,25 +161,33 @@ sudo systemctl stop serial-getty@ttyS0.service
 sudo systemctl disable serial-getty@ttyS0.service
 
 ```
+
 You also need to remove the console from the cmdline.txt. If you edit this with:
+
 ```bash
 sudo nano /boot/cmdline.txt
 ```
+
 then remove the line: `console=serial0,115200` and save and reboot for changes to take effect.
 
 ### Swapping the Serial Ports on Pi3
 
 To use add the following line to the /boot/config.txt
+
 ```bash
 sudo nano /boot/config.txt
 ```
+
 and add:
+
 `dtoverlay=pi3-miniuart-bt`
 
 Finally,you can check that it has worked by:
+
 ```bash
 ls -l /dev
 ```
+
 and you’ll see something like this:
 
 serial0->ttyAMA0
@@ -256,10 +267,20 @@ make -j4
 sudo make install
 ```
 
-Plug in the USB camera
+Plug in the USB camera, Create below shell script, named video.sh
+
+```bash
+# !/bin/bash
+
+ffmpeg \
+-f v4l2 -framerate 25 \
+-video_size 1280x720 -i /dev/video0 \
+-f flv \
+rtmp://video.airforceuav.com:1935/live/livestream
+```
 
 ```bash
 tmux
-ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 -f flv rtmp://video.airforceuav.com:1935/live/livestream
+bash video.sh
 Ctrl+B D
 ```

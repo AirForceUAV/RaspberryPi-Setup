@@ -66,7 +66,7 @@ sudo reboot
 ## Add Deploy Key to Github Repo
 
 ```bash
-ssh-keygen -t rsa -C "yogurtshen@gmail.com"
+ssh-keygen -t rsa -C "YOUR_EMAIL"
 cd ~/.ssh 
 cat id_rsa.pub
 ```
