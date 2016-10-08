@@ -297,10 +297,5 @@ Ctrl+B D
 Or use Raspberry Pi camera module
 
 ```bash
-<<<<<<< HEAD
 raspivid -t 0 -w 1280 -h 720 -fps 30 -b 1000000 -vf -o - | ffmpeg -i - -vcodec copy -an -f flv rtmp://video.airforceuav.com:1935/live/livestream
 ```
-=======
-raspivid -t 99999 -w 1280 -h 720 -fps 30 -b 1000000 -vf -o - | ffmpeg -i - -vcodec copy -an -f flv rtmp://video.airforceuav.com:1935/live/livestream
-```
->>>>>>> 69a0da192ddb8aacfda30f65631a69a0e90cb9c2
