@@ -276,7 +276,7 @@ make -j4
 sudo make install
 ```
 
-Plug in the USB camera, Create below shell script, named Video_USB.sh
+Plug in the USB camera, Create below shell script, named `Video_USB.sh` as below
 
 ```bash
 # !/bin/bash
@@ -297,5 +297,5 @@ Ctrl+B D
 Or use Raspberry Pi camera module
 
 ```bash
-raspivid -t 99999 -w 1280 -h 720 -fps 30 -b 1000000 -vf -o - | ffmpeg -i - -vcodec copy -an -f flv rtmp://video.airforceuav.com:1935/live/livestream
+raspivid -t 0 -w 1280 -h 720 -fps 30 -b 1000000 -vf -o - | ffmpeg -i - -vcodec copy -an -f flv rtmp://video.airforceuav.com:1935/live/livestream
 ```
