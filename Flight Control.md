@@ -39,7 +39,7 @@ sudo apt-get upgrade
 ```
 
 ```bash
-sudo apt-get install rpi-update zsh git vim uuid-runtime tmux
+sudo apt-get install rpi-update zsh git vim tmux
 ```
 
 ```bash
@@ -260,6 +260,7 @@ go build
 ## FFMPEG
 
 ```bash
+sudo apt-get install libx264-142 libx264-dev
 git clone --depth=1 git://source.ffmpeg.org/ffmpeg.git
 cd ffmpeg
 ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree
