@@ -99,7 +99,7 @@ sudo apt-get install python-dev python-pip minicom
 ```
 
 ```python
-sudo pip install dronekit dronekit-sitl
+sudo pip install dronekit==2.5.0 dronekit-sitl==3.0.1
 sudo pip install paho-mqtt
 sudo pip install threadpool
 sudo pip install pynmea2
