@@ -95,7 +95,7 @@ to check wlan0's IP address
 
 ## For pixController
 ```bash
-sudo apt-get install python-dev python-pip git vim minicom
+sudo apt-get install python-dev python-pip minicom
 ```
 
 ```python
@@ -257,6 +257,14 @@ go build
 ./DataProxy fc
 ```
 
+##Supervisor
+
+```bash
+sudo apt-get install python-setuptools python-dev build-essential
+easy_install supervisor
+```
+
+
 ## FFMPEG
 
 ```bash
@@ -268,7 +276,7 @@ make -j4
 sudo make install
 ```
 
-Plug in the USB camera, Create below shell script, named video.sh
+Plug in the USB camera, Create below shell script, named Video_USB.sh
 
 ```bash
 # !/bin/bash
@@ -284,4 +292,10 @@ rtmp://video.airforceuav.com:1935/live/livestream
 tmux
 bash video.sh
 Ctrl+B D
+```
+
+Or use Raspberry Pi camera module
+
+```bash
+raspivid -t 99999 -w 1280 -h 720 -fps 30 -b 1000000 -vf -o - | ffmpeg -i - -vcodec copy -an -f flv rtmp://video.airforceuav.com:1935/live/livestream
 ```
