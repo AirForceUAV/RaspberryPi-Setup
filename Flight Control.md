@@ -263,7 +263,7 @@ go build
 
 ```bash
 sudo apt-get install python-setuptools python-dev build-essential
-easy_install supervisor
+sudo easy_install supervisor
 ```
 
 

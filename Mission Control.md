@@ -130,3 +130,10 @@ go get github.com/satori/go.uuid
 go build
 ./DataProxy mc
 ```
+
+##Supervisor
+
+```bash
+sudo apt-get install python-setuptools python-dev build-essential
+sudo easy_install supervisor
+```
