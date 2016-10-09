@@ -17,7 +17,7 @@ Using
 sudo raspi-config
 ```
 
-to change locale/time etc.
+to change locale/time etc, a reboot is required.
 
 ```bash
 sudo nano /etc/apt/sources.list
