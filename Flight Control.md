@@ -216,7 +216,7 @@ Download latest ARM version golang from
 [Golang Release Page](https://golang.org/dl/)
 
 ```bash
-scp /Users/YogurtShen/Downloads/go1.7.1.linux-armv6l.tar.gz pi@192.168.1.16:~
+scp /Users/YogurtShen/Downloads/go1.7.1.linux-armv6l.tar.gz pi@192.168.1.20:~
 
 sudo tar -C /usr/local -xzf go1.7.1.linux-armv6l.tar.gz
 
@@ -253,6 +253,8 @@ git clone git@github.com:AirForceUAV/DataProxy.git
 cd DataProxy
 git checkout -b develop origin/develop
 go get github.com/eclipse/paho.mqtt.golang
+go get github.com/mdp/qrterminal
+go get github.com/satori/go.uuid
 go build
 ./DataProxy fc
 ```
