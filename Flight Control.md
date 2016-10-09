@@ -297,5 +297,11 @@ Ctrl+B D
 Or use Raspberry Pi camera module
 
 ```bash
-raspivid -t 0 -w 1280 -h 720 -fps 30 -b 1000000 -vf -o - | ffmpeg -i - -vcodec copy -an -f flv rtmp://video.airforceuav.com:1935/live/livestream
+sudo modprobe bcm2835_v4l2
+```
+
+```bash
+sudo raspivid -fl -t 0 -w 1280 -h 720 -b 1200000 -fps 15 \
+    -pf baseline -o - | ffmpeg -f h264 -i - \
+    -c copy -an -f flv -y rtmp://video.airforceuav.com:1935/live/livestream
 ```

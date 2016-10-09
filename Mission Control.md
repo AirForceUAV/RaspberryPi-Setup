@@ -40,7 +40,7 @@ sudo apt-get upgrade
 ```
 
 ```bash
-sudo apt-get install rpi-update zsh git vim uuid-runtime tmux
+sudo apt-get install rpi-update zsh git vim tmux
 ```
 
 ```bash
