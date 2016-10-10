@@ -71,23 +71,6 @@ cd ~/.ssh
 cat id_rsa.pub
 ```
 
-## Electron
-Download latest ARM version electron from 
-[Electron Release Page](https://github.com/electron/electron/releases)
-
-```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
-
-```bash
-scp /Users/YogurtShen/Downloads/electron-v1.4.3-linux-arm.zip pi@192.168.1.22:~
-
-unzip electron-v1.4.3-linux-arm.zip
-
-./electron
-```
-
 ## Golang
 Download latest ARM version golang from 
 [Golang Release Page](https://golang.org/dl/)
@@ -134,6 +117,28 @@ go get github.com/mdp/qrterminal
 go get github.com/satori/go.uuid
 go build
 ./DataProxy mc
+```
+
+## Electron
+Download latest ARM version electron from 
+[Electron Release Page](https://github.com/electron/electron/releases)
+
+```bash
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+```bash
+scp /Users/YogurtShen/Downloads/electron-v1.4.3-linux-arm.zip pi@192.168.1.22:~
+
+unzip electron-v1.4.3-linux-arm.zip
+
+./electron
+```
+
+```bash
+git clone git@github.com:AirForceUAV/MissionControl.git
+~/electron ~/MissionControl
 ```
 
 ##Supervisor
