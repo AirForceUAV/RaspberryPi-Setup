@@ -76,6 +76,11 @@ Download latest ARM version electron from
 [Electron Release Page](https://github.com/electron/electron/releases)
 
 ```bash
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+```bash
 scp /Users/YogurtShen/Downloads/electron-v1.4.3-linux-arm.zip pi@192.168.1.22:~
 
 unzip electron-v1.4.3-linux-arm.zip
@@ -177,4 +182,14 @@ environment=HOME="/home/pi", USER="pi"
 
 ```bash
 sudo supervisord -c /etc/supervisord.conf
+```
+
+```bash
+sudo vim /etc/rc.local
+```
+
+Add blow content before `exit 0`
+
+```bash
+sudo /usr/local/bin/supervisord -c /etc/supervisord.conf
 ```
