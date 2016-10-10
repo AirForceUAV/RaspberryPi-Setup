@@ -115,8 +115,9 @@ git checkout -b develop origin/develop
 go get github.com/eclipse/paho.mqtt.golang
 go get github.com/mdp/qrterminal
 go get github.com/satori/go.uuid
+go get github.com/paypal/gatt
 go build
-./DataProxy mc
+sudo ./DataProxy mc
 ```
 
 if it shows below: 
