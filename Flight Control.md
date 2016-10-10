@@ -259,6 +259,25 @@ go build
 ./DataProxy fc
 ```
 
+if it shows below: 
+
+```bash
+src go get github.com/eclipse/paho.mqtt.golang
+
+# cd .; git clone https://go.googlesource.com/net /home/pi/Go/src/golang.org/x/net
+Cloning into '/home/pi/Go/src/golang.org/x/net'...
+fatal: unable to access 'https://go.googlesource.com/net/': Could not resolve host: go.googlesource.com
+package golang.org/x/net/websocket: exit status 128
+```
+
+Then
+
+```bash
+scp /Users/YogurtShen/Downloads/golang.org.x.net.tar.gz  pi@192.168.1.20:~/Go/src
+rm -rf ~/Go/src/golang.org
+src tar zxvf golang.org.x.net.tar.gz
+```
+
 ##Supervisor
 
 ```bash
