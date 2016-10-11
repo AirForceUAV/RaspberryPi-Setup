@@ -188,7 +188,7 @@ Add below content
 
 ```
 [program:DataProxy]
-command=/home/pi/Go/src/DataProxy/DataProxy mc
+command=sudo /home/pi/Go/src/DataProxy/DataProxy mc
 autostart=true
 autorestart=true
 startsecs=5
