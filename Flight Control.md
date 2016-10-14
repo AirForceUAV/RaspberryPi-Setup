@@ -327,3 +327,5 @@ sudo raspivid -fl -t 0 -w 1280 -h 720 -b 1200000 -fps 15 \
     -pf baseline -o - | ffmpeg -f h264 -i - \
     -c copy -an -f flv -y rtmp://video.airforceuav.com:1935/live/livestream
 ```
+
+[Online RTMP Player](https://www.hlsplayer.net/rtmp-player)
