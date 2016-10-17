@@ -194,6 +194,30 @@ serial0->ttyAMA0
 
 serial1->ttyS0
 
+## Rename serial port on Pi3
+
+### display device info
+```bash
+sudo udevadm info -a -p $(udevadm info -q path -n /dev/ttyUSB0)
+```
+
+```bash
+sudo vim /etc/udev/rules.d/10-local.rules
+```
+
+### Add variation,Like:
+
+SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATT{port_number}=="0",SYMLINK="GPS"
+
+```bash 
+sudo service udev restart
+```
+
+### Display whether is successful
+```bash
+ls -l /dev
+```
+
 
 
 ## Git command
