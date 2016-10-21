@@ -90,9 +90,9 @@ Download latest ARM version golang from
 [Golang Release Page](https://golang.org/dl/)
 
 ```bash
-scp /Users/YogurtShen/Downloads/go1.7.1.linux-armv6l.tar.gz pi@192.168.1.20:~
+scp /Users/YogurtShen/Downloads/go1.7.3.linux-armv6l.tar.gz pi@192.168.1.20:~
 
-sudo tar -C /usr/local -xzf go1.7.1.linux-armv6l.tar.gz
+sudo tar -C /usr/local -xzf go1.7.3.linux-armv6l.tar.gz
 
 sudo vim .zshrc
 ```
