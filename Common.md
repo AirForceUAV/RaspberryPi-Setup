@@ -161,6 +161,7 @@ go get github.com/eclipse/paho.mqtt.golang
 go get github.com/mdp/qrterminal
 go get github.com/satori/go.uuid
 go get github.com/paypal/gatt
+go get github.com/tarm/serial
 go build
 sudo ./DataProxy {$target}
 ```
