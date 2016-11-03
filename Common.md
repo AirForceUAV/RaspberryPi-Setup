@@ -157,11 +157,11 @@ cd src
 git clone git@github.com:AirForceUAV/DataProxy.git
 cd DataProxy
 git checkout -b develop origin/develop
-go get github.com/eclipse/paho.mqtt.golang
 go get github.com/mdp/qrterminal
 go get github.com/satori/go.uuid
 go get github.com/paypal/gatt
 go get github.com/tarm/serial
+go get github.com/eclipse/paho.mqtt.golang
 go build
 sudo ./DataProxy {$target}
 ```
@@ -182,7 +182,7 @@ Then
 ```bash
 scp /Users/YogurtShen/Downloads/golang.org.x.net.tar.gz  pi@192.168.1.20:~/Go/src
 rm -rf ~/Go/src/golang.org
-src tar zxvf golang.org.x.net.tar.gz
+tar zxvf golang.org.x.net.tar.gz
 ```
 
 ##Supervisor
