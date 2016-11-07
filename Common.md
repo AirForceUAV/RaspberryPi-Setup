@@ -39,7 +39,7 @@ sudo apt-get upgrade
 ```
 
 ```bash
-sudo apt-get install rpi-update zsh git vim tmux
+sudo apt-get install rpi-update zsh git vim tmux gstreamer1.0
 ```
 
 ```bash
