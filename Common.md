@@ -39,7 +39,7 @@ sudo apt-get upgrade
 ```
 
 ```bash
-sudo apt-get install rpi-update zsh git vim tmux gstreamer1.0
+sudo apt-get install rpi-update zsh git vim tmux openssh-server gstreamer1.0
 ```
 
 ```bash
@@ -62,7 +62,7 @@ sudo rpi-update
 sudo reboot
 ```
 
-## Config a Wi-Fi dongle
+## Config a Wi-Fi dongle(Deprecated)
 
 ```bash
 sudo nano /etc/network/interfaces
