@@ -6,15 +6,14 @@ Download latest ARM version electron from
 [Electron Release Page](https://github.com/electron/electron/releases)
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
+sudo npm install -g electron
 ```
 
 ```bash
 scp /Users/YogurtShen/Downloads/electron-v1.4.3-linux-arm.zip pi@192.168.1.22:~
-
 unzip electron-v1.4.3-linux-arm.zip
-
 ./electron
 ```
 

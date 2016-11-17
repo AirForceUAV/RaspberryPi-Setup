@@ -39,7 +39,7 @@ sudo apt-get upgrade
 ```
 
 ```bash
-sudo apt-get install rpi-update zsh git vim tmux openssh-server gstreamer1.0
+sudo apt-get install rpi-update zsh git vim tmux openssh-server build-essential gstreamer1.0
 ```
 
 ```bash
