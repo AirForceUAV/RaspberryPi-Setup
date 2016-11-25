@@ -26,16 +26,15 @@ sudo nano /etc/apt/sources.list
 Replace the original address with USTC mirror
 
 ```bash
-deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
-deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main non-free contrib
+deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main non-free contrib
 ```
 
 ```bash
 sudo apt-get update
-```
-
-```bash
 sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt full-upgrade
 ```
 
 ```bash
@@ -50,15 +49,11 @@ Then enter password to change to zsh or you need
 
 ```bash
 chsh -s /bin/zsh
+sudo reboot
 ``` 
-
-and reboot later
 
 ```bash
 sudo rpi-update
-```
-
-```
 sudo reboot
 ```
 
@@ -156,35 +151,9 @@ mkdir src pkg bin
 cd src
 git clone git@github.com:AirForceUAV/DataProxy.git
 cd DataProxy
-git checkout -b develop origin/develop
-go get github.com/mdp/qrterminal
-go get github.com/satori/go.uuid
-go get github.com/paypal/gatt
-go get github.com/tarm/serial
-go get github.com/Sirupsen/logrus
-go get github.com/spf13/viper
-go get github.com/eclipse/paho.mqtt.golang
+git checkout develop
 go build
 sudo ./DataProxy {$target}
-```
-
-if it shows below: 
-
-```bash
-src go get github.com/eclipse/paho.mqtt.golang
-
-# cd .; git clone https://go.googlesource.com/net /home/pi/Go/src/golang.org/x/net
-Cloning into '/home/pi/Go/src/golang.org/x/net'...
-fatal: unable to access 'https://go.googlesource.com/net/': Could not resolve host: go.googlesource.com
-package golang.org/x/net/websocket: exit status 128
-```
-
-Then
-
-```bash
-scp /Users/YogurtShen/Downloads/golang.org.x.net.tar.gz  pi@192.168.1.20:~/Go/src
-rm -rf ~/Go/src/golang.org
-tar zxvf golang.org.x.net.tar.gz
 ```
 
 ##Supervisor
