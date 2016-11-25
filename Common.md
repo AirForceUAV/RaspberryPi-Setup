@@ -131,8 +131,8 @@ sudo vim .zshrc
 Add two lines at bottom
 
 ```bash
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 ```
 
 ```bash
