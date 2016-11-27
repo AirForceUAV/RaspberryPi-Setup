@@ -153,7 +153,7 @@ git clone git@github.com:AirForceUAV/DataProxy.git
 cd DataProxy
 git checkout develop
 go build
-sudo ./DataProxy {$target}
+sudo ./DataProxy start -t {$target}
 ```
 
 ##Supervisor
