@@ -11,24 +11,16 @@ Recommend using windows to write SD card for convenience
 
 ## Common
 
-Using
+Using `sudo raspi-config` to change locale/time etc, a reboot is required.
 
-```bash
-sudo raspi-config
-```
-
-to change locale/time etc, a reboot is required.
-
-```bash
-sudo nano /etc/apt/sources.list
-```
-
-Replace the original address with USTC mirror
+Using `sudo nano /etc/apt/sources.list` to replace the original address with USTC mirror,list below:
 
 ```bash
 deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main non-free contrib
 deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main non-free contrib
 ```
+
+Update the OS
 
 ```bash
 sudo apt-get update
@@ -37,8 +29,10 @@ sudo apt-get dist-upgrade
 sudo apt full-upgrade
 ```
 
+Install packages
+
 ```bash
-sudo apt-get install rpi-update zsh git vim tmux openssh-server build-essential gstreamer1.0 gstreamer1.0-libav
+sudo apt-get install rpi-update zsh git vim tmux beanstalkd openssh-server build-essential gstreamer1.0 gstreamer1.0-libav
 ```
 
 ```bash
