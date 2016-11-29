@@ -13,7 +13,7 @@ Recommend using windows to write SD card for convenience
 
 Using `sudo raspi-config` to change locale/time etc, a reboot is required.
 
-Using `sudo nano /etc/apt/sources.list` to replace the original address with USTC mirror,list below:
+Using `sudo nano /etc/apt/sources.list` to replace the original address with USTC mirror, list below:
 
 ```bash
 deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ jessie main non-free contrib
@@ -29,7 +29,7 @@ sudo apt-get dist-upgrade
 sudo apt full-upgrade
 ```
 
-Install packages
+Install some packages
 
 ```bash
 sudo apt-get install rpi-update zsh git vim tmux beanstalkd openssh-server build-essential gstreamer1.0 gstreamer1.0-libav
@@ -46,41 +46,12 @@ chsh -s /bin/zsh
 sudo reboot
 ``` 
 
+Update the firmware
+
 ```bash
 sudo rpi-update
 sudo reboot
 ```
-
-## Config a Wi-Fi dongle(Deprecated)
-
-```bash
-sudo nano /etc/network/interfaces
-```
-
-modify content like below:
-
-```bash
-auto lo
-iface lo inet loopback
-iface eth0 inet dhcp
-auto wlan0
-allow-hotplug wlan0
-iface wlan0 inet dhcp
-wpa-ssid “YOUR SSID”
-wpa-psk “YOUR PASSWORD”
-```
-
-```bash
-sudo /etc/init.d/networking restart
-```
-
-Then
-
-```bash
-ifconfig
-```
-
-to check wlan0's IP address
 
 ## Add Deploy Key to Github Repo
 
@@ -147,7 +118,14 @@ git clone git@github.com:AirForceUAV/DataProxy.git
 cd DataProxy
 git checkout develop
 go build
-sudo ./DataProxy start -t {$target}
+beanstalkd -V -l 127.0.0.1 -p port(fc:2222 or mc:3333)
+sudo ./DataProxy start -t (fc or mc)
+```
+
+```bash
+go get github.com/kadekcipta/beanwalker
+go install
+beanwalker -h localhost -p port(fc:2222 or mc:3333)
 ```
 
 ##Supervisor
