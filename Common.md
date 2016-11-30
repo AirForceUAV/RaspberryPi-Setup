@@ -124,6 +124,7 @@ sudo ./DataProxy start -t (fc or mc)
 
 ```bash
 go get github.com/kadekcipta/beanwalker
+cd github.com/kadekcipta/beanwalker
 go install
 beanwalker -h localhost -p port(fc:2222 or mc:3333)
 ```
