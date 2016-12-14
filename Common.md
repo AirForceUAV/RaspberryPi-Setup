@@ -3,7 +3,7 @@ For Both Flight Control & Mission Control
 
 Hardware: Raspberry Pi 3 B
 
-OS: [RASPBIAN JESSIE LITE (2016-09-23)](https://www.raspberrypi.org/downloads/raspbian/)
+OS: [RASPBIAN JESSIE LITE (2016-11-25)](https://www.raspberrypi.org/downloads/raspbian/)
 
 Note: [INSTALLING OPERATING SYSTEM IMAGES](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
 
@@ -11,7 +11,7 @@ Recommend using windows to write SD card for convenience
 
 ## Common
 
-Using `sudo raspi-config` to change locale/time etc, a reboot is required.
+Using `sudo raspi-config` to change locale/time & enable ssh etc, a reboot is required.
 
 Using `sudo nano /etc/apt/sources.list` to replace the original address with USTC mirror, list below:
 
@@ -32,8 +32,9 @@ sudo apt full-upgrade
 Install some packages
 
 ```bash
-sudo apt-get install rpi-update zsh git vim tmux beanstalkd openssh-server build-essential gstreamer1.0 gstreamer1.0-libav
+sudo apt-get install rpi-update git vim tmux gstreamer1.0 gstreamer1.0-libav zsh
 ```
+//beanstalkd openssh-server build-essential
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -51,6 +52,7 @@ Update the firmware
 ```bash
 sudo rpi-update
 sudo reboot
+sudo apt-get autoremove
 ```
 
 ## Add Deploy Key to Github Repo

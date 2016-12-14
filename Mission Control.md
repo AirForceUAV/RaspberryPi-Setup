@@ -2,8 +2,6 @@
 Be Mission Control Panle
 
 ## Electron
-Download latest ARM version electron from 
-[Electron Release Page](https://github.com/electron/electron/releases)
 
 ```bash
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -13,14 +11,8 @@ sudo cnpm install -g electron
 ```
 
 ```bash
-scp /Users/YogurtShen/Downloads/electron-v1.4.3-linux-arm.zip pi@192.168.1.22:~
-unzip electron-v1.4.3-linux-arm.zip
-./electron
-```
-
-```bash
 git clone git@github.com:AirForceUAV/MissionControl.git
-~/electron ~/MissionControl
+electron ~/MissionControl
 ```
 
 ##Supervisor
