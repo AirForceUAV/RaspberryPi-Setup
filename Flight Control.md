@@ -42,7 +42,7 @@ To summarise the ports on a Raspberry Pi 3 and be crystal clear:
 /dev/ttyS0   -> GPIO pins 14(Tx) and 15(Rx).
 
 ```bash
-ls -l /dev
+ll /dev
 ```
 
 and you will see something like this:   
@@ -85,7 +85,7 @@ and add:
 Finally,you can check that it has worked by:
 
 ```bash
-ls -l /dev
+ll /dev
 ```
 
 and you’ll see something like this:
@@ -111,13 +111,15 @@ SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATT{port_number}=="0",SYMLINK="GPS"
 
 SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{port_number}=="0",SYMLINK="compass"
 
+SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATT{port_number}=="0",SYMLINK="IMU"
+
 ```bash 
 sudo service udev restart
 ```
 
 ### Display whether is successful
 ```bash
-ls -l /dev
+ll /dev
 ```
 
 ## FFMPEG
