@@ -35,9 +35,11 @@ Install package for pixhawk
 ```python
 sudo pip install dronekit==2.5.0 dronekit-sitl==3.0.1
 ```
-[dronekit](http://python.dronekit.io/about/index.html) [dronekit-sitl](https://github.com/dronekit/dronekit-sitl)
-[paho-mqtt](https://pypi.python.org/pypi/paho-mqtt/1.1)
-[pynmea2](https://github.com/Knio/pynmea2) [apscheduler](https://apscheduler.readthedocs.io/en/latest/userguide.html)
+    [dronekit](http://python.dronekit.io/about/index.html)
+    [dronekit-sitl](https://github.com/dronekit/dronekit-sitl)
+    [paho-mqtt](https://pypi.python.org/pypi/paho-mqtt/1.1)
+    [pynmea2](https://github.com/Knio/pynmea2)
+    [apscheduler](https://apscheduler.readthedocs.io/en/latest/userguide.html)
 
 ## Enable serial port on Pi3
 
@@ -59,9 +61,9 @@ and add the line(at the bottom)
 
 To summarise the ports on a Raspberry Pi 3 and be crystal clear:
 
-/dev/ttyAMA0 --> Bluetooth
+    /dev/ttyAMA0 --> Bluetooth
 
-/dev/ttyS0   --> GPIO pins 14(Tx) and 15(Rx).
+    /dev/ttyS0   --> GPIO pins 14(Tx) and 15(Rx).
 
 ```bash
 ll /dev
@@ -69,9 +71,9 @@ ll /dev
 
 and you will see something like this:   
 
-serial0->ttyS0  
+    serial0->ttyS0  
 
-serial1->ttyAMA0
+    serial1->ttyAMA0
 
 ### Disable the Console
 
@@ -129,11 +131,11 @@ sudo vim /etc/udev/rules.d/10-local.rules
 
 ### Add variation,Like:
 
-SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATT{port_number}=="0",SYMLINK="GPS"
+    SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATT{port_number}=="0",SYMLINK="GPS"
 
-SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{port_number}=="0",SYMLINK="compass"
+    SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{port_number}=="0",SYMLINK="compass"
 
-SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATT{port_number}=="0",SYMLINK="IMU"
+    SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATT{port_number}=="0",SYMLINK="IMU"
 
 Take effect
 ```bash 
@@ -147,11 +149,9 @@ ll /dev
 ```
 You will see someting like:
 
-GPS -> ttyUSB0
-
-compass -> ttyUSB1
-
-IMU -> ttyUSB2
+    GPS -> ttyUSB0 
+    compass -> ttyUSB1
+    IMU -> ttyUSB2
 
 ## ProtoBuf
 
@@ -172,8 +172,9 @@ sudo vim /etc/profile
 ```
 add:
 
-export PATH=$PATH:/usr/local/protobuf/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/protobuf/lib
+    export PATH=$PATH:/usr/local/protobuf/bin
+
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/protobuf/lib
 
 To build and install the Protocol Buffer for python (protobuf):
 ```bash
