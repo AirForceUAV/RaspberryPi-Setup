@@ -6,7 +6,7 @@ UAV:HEX4,HEX6,Copter-550,Copter-600,AF-25B
 
 Computer:Pi3 and MCU
 
-FlightController:pixhawk, ACE_ON, Naza-m v2, MicroBeast
+FlightController:pixhawk, ACE_ONE, Naza-m v2, MicroBeast
 
 
 [IMU](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.sSd9zC&id=45727369640&_u=n9i6v3oce6d):MPU9250 AHRS
@@ -122,7 +122,7 @@ serial1->ttyS0
 ```bash
 sudo udevadm info -a -p $(udevadm info -q path -n /dev/ttyUSB0)
 ```
-
+Edit *.rules
 ```bash
 sudo vim /etc/udev/rules.d/10-local.rules
 ```
@@ -181,7 +181,7 @@ cd python
 sudo python setup.py install
 pip show protobuf
 ```
-Compile .proto ,ouput for python
+Compile *.proto ,ouput for python
 
 protoc -I=$SRC_DIR --python_out=$DST_DIR $SRC_DIR/addressbook.proto
 
