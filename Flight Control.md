@@ -117,10 +117,12 @@ SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{por
 
 SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATT{port_number}=="0",SYMLINK="IMU"
 
+Take effect
 ```bash 
-sudo service udev restart
+sudo service udev restartT
 ```
-or  replug
+or  replug (recommand)
+
 ### Display whether is successful
 ```bash
 ll /dev
@@ -128,7 +130,9 @@ ll /dev
 You will see someting like:
 
 GPS -> ttyUSB0
+
 compass -> ttyUSB1
+
 IMU -> ttyUSB2
 
 ## ProtoBuf
@@ -151,8 +155,10 @@ sudo python setup.py install
 pip show protobuf
 ```
 Compile .proto ,ouput for python
+
 protoc -I=$SRC_DIR --python_out=$DST_DIR $SRC_DIR/addressbook.proto
-like:
+
+example:
 ```bash
 protoc -I=./ --python_out=./ addressbook.proto
 ```
