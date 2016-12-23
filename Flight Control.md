@@ -1,5 +1,21 @@
 # RaspberryPi For Flight Control
-Be Companion Computer for Pixhawk or ACE ONE
+Be Companion Computer for FlightController
+## Hardware
+
+UAV:HEX4,HEX6,Copter-550,Copter-600,AF-25B
+
+Computer:Pi3 and MCU
+
+FlightController:pixhawk, ACE_ON, Naza-m v2, MicroBeast
+[IMU](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.sSd9zC&id=45727369640&_u=n9i6v3oce6d):MPU9250 AHRS
+
+[Compass](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.sSd9zC&id=44445395508&_u=n9i6v3ob5ab):HCM365B
+
+[GPS](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.sSd9zC&id=17669339623&_u=n9i6v3o34c9):NEO-M8N
+
+[Baro](https://detail.tmall.com/item.htm?id=41281679152&spm=a1z09.2.0.0.zyoHfd&_u=n9i6v3o6702):GY-63 MS5611-01BA03
+
+
 
 ## For pixController
 
@@ -141,18 +157,22 @@ IMU -> ttyUSB2
 
 To build and install the Protocol Buffer compiler (protoc) execute the following:
 ```bash
-./configure --/usr/local/protobuf
+./configure --prefix=/usr/local/protobuf
 make
 make check
 sudo make install
 sudo ldconfig # refresh shared library cache.
 protoc --version
 ```
-Add envionment variables：
+Add envionment variables,and edit /etc/profile：
 ```bash
+sudo vim /etc/profile
+```
+add:
+
 export PATH=$PATH:/usr/local/protobuf/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/protobuf/lib
-```
+
 To build and install the Protocol Buffer for python (protobuf):
 ```bash
 cd python
