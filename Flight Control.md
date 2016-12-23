@@ -2,24 +2,28 @@
 Be Companion Computer for Pixhawk or ACE ONE
 
 ## For pixController
-```bash
-sudo apt-get install python-dev python-pip minicom
-```
 
+Install common package
+```bash
+sudo apt-get install python-dev python-pip
+```
 ```python
-sudo pip install dronekit==2.5.0 dronekit-sitl==3.0.1
 sudo pip install paho-mqtt
-sudo pip install threadpool
 sudo pip install pynmea2
 sudo pip install apscheduler
 ```
+
+Install package for pixhawk
+```python
+sudo pip install dronekit==2.5.0 dronekit-sitl==3.0.1
+```
 [dronekit](http://python.dronekit.io/about/index.html) [dronekit-sitl](https://github.com/dronekit/dronekit-sitl)
-[paho-mqtt](https://pypi.python.org/pypi/paho-mqtt/1.1) [threadpool](https://pypi.python.org/pypi/threadpool/1.2.6)
+[paho-mqtt](https://pypi.python.org/pypi/paho-mqtt/1.1)
 [pynmea2](https://github.com/Knio/pynmea2) [apscheduler](https://apscheduler.readthedocs.io/en/latest/userguide.html)
 
 ## Enable serial port on Pi3
 
-### Enable
+### Enable "/dev/ttyAMA0"
 
 Edit `config.txt`
 
@@ -37,9 +41,9 @@ and add the line(at the bottom)
 
 To summarise the ports on a Raspberry Pi 3 and be crystal clear:
 
-/dev/ttyAMA0 -> Bluetooth
+/dev/ttyAMA0 --> Bluetooth
 
-/dev/ttyS0   -> GPIO pins 14(Tx) and 15(Rx).
+/dev/ttyS0   --> GPIO pins 14(Tx) and 15(Rx).
 
 ```bash
 ll /dev
@@ -51,7 +55,7 @@ serial0->ttyS0
 
 serial1->ttyAMA0
 
-### Disabling the Console
+### Disable the Console
 
 If you are using the serial port for anything other than the console you need to disable it.
 
@@ -96,7 +100,7 @@ serial1->ttyS0
 
 ## Rename serial port on Pi3
 
-### display device info
+### Display device info
 ```bash
 sudo udevadm info -a -p $(udevadm info -q path -n /dev/ttyUSB0)
 ```
@@ -116,12 +120,43 @@ SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATT{port_number}=="0",SYMLINK="IM
 ```bash 
 sudo service udev restart
 ```
-
+or  replug
 ### Display whether is successful
 ```bash
 ll /dev
 ```
+You will see someting like:
 
+GPS -> ttyUSB0
+compass -> ttyUSB1
+IMU -> ttyUSB2
+
+## ProtoBuf
+
+[Download ProtoBuf](https://github.com/google/protobuf/releases)
+
+To build and install the Protocol Buffer compiler (protoc) execute the following:
+```bash
+./configure
+make
+make check
+sudo make install
+sudo ldconfig # refresh shared library cache.
+protoc --version
+```
+To build and install the Protocol Buffer for python (protobuf):
+```bash
+cd python
+sudo python setup.py install
+pip show protobuf
+```
+Compile .proto ,ouput for python
+protoc -I=$SRC_DIR --python_out=$DST_DIR $SRC_DIR/addressbook.proto
+like:
+```bash
+protoc -I=./ --python_out=./ addressbook.proto
+```
+This generates addressbook_pb2.py in your specified destination directory.
 ## FFMPEG
 
 ```bash
