@@ -2,13 +2,12 @@
 =========================================================
 Be Companion Computer for FlightController
 ## Hardware
-```
+
 UAV:HEX4,HEX6,Copter-550,Copter-600,AF-25B
 
 Computer:Pi3 and MCU
 
 FlightController:pixhawk, ACE_ONE, Naza-m v2, MicroBeast
-
 
 [IMU](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.sSd9zC&id=45727369640&_u=n9i6v3oce6d):MPU9250 AHRS
 
@@ -17,8 +16,6 @@ FlightController:pixhawk, ACE_ONE, Naza-m v2, MicroBeast
 [GPS](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.sSd9zC&id=17669339623&_u=n9i6v3o34c9):NEO-M8N
 
 [Baro](https://detail.tmall.com/item.htm?id=41281679152&spm=a1z09.2.0.0.zyoHfd&_u=n9i6v3o6702):GY-63 MS5611-01BA03
-
-```
 
 ## For pixController
 
@@ -36,17 +33,15 @@ Install package for pixhawk
 ```python
 sudo pip install dronekit==2.5.0 dronekit-sitl==3.0.1
 ```
-```
 [dronekit](http://python.dronekit.io/about/index.html)
 [dronekit-sitl](https://github.com/dronekit/dronekit-sitl)
 [paho-mqtt](https://pypi.python.org/pypi/paho-mqtt/1.1)
 [pynmea2](https://github.com/Knio/pynmea2)
 [apscheduler](https://apscheduler.readthedocs.io/en/latest/userguide.html)
-```
 
 ## Enable serial port on Pi3
 
-### Enable "/dev/ttyAMA0"
+### Enable /dev/ttyAMA0
 
 Edit `config.txt`
 
@@ -63,11 +58,10 @@ and add the line(at the bottom)
 ### Serial Aliases
 
 To summarise the ports on a Raspberry Pi 3 and be crystal clear:
-
-    /dev/ttyAMA0 --> Bluetooth
-
-    /dev/ttyS0   --> GPIO pins 14(Tx) and 15(Rx).
-
+```
+/dev/ttyAMA0 --> Bluetooth
+/dev/ttyS0   --> GPIO pins 14(Tx) and 15(Rx).
+```
 ```bash
 ll /dev
 ```
