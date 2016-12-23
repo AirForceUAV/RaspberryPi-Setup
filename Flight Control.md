@@ -119,7 +119,7 @@ SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATT{port_number}=="0",SYMLINK="IM
 
 Take effect
 ```bash 
-sudo service udev restartT
+sudo service udev restart
 ```
 or  replug (recommand)
 
@@ -141,12 +141,17 @@ IMU -> ttyUSB2
 
 To build and install the Protocol Buffer compiler (protoc) execute the following:
 ```bash
-./configure
+./configure --/usr/local/protobuf
 make
 make check
 sudo make install
 sudo ldconfig # refresh shared library cache.
 protoc --version
+```
+Add envionment variables：
+```bash
+export PATH=$PATH:/usr/local/protobuf/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/protobuf/lib
 ```
 To build and install the Protocol Buffer for python (protobuf):
 ```bash
