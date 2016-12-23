@@ -187,7 +187,7 @@ protoc -I=$SRC_DIR --python_out=$DST_DIR $SRC_DIR/addressbook.proto
 
 example:
 ```bash
-protoc -I=./ --python_out=./ addressbook.proto
+protoc -I=. --python_out=. addressbook.proto
 ```
 This generates addressbook_pb2.py in your specified destination directory.
 ## FFMPEG
