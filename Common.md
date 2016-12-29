@@ -34,7 +34,8 @@ Install some packages
 ```bash
 sudo apt-get install rpi-update git vim tmux gstreamer1.0 gstreamer1.0-libav zsh
 ```
-//beanstalkd openssh-server build-essential
+
+//Need Mosquitto Redis
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -118,17 +119,7 @@ mkdir src pkg bin
 cd src
 git clone git@github.com:AirForceUAV/DataProxy.git
 cd DataProxy
-git checkout develop
-go build
-beanstalkd -V -l 127.0.0.1 -p port(fc:2222 or mc:3333)
-sudo ./DataProxy start -t (fc or mc)
-```
-
-```bash
-go get github.com/kadekcipta/beanwalker
-cd github.com/kadekcipta/beanwalker
-go install
-beanwalker -h localhost -p port(fc:2222 or mc:3333)
+./DataProxy start -t (fc or mc)
 ```
 
 ##Supervisor
