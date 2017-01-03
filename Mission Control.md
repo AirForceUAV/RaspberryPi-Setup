@@ -58,32 +58,6 @@ environment=HOME="/home/pi", USER="pi"
 ```
 
 ```bash
-sudo vim /etc/supervisor/HTTPServer.conf
-```
-
-Add below content 
-
-```bash
-[program:HTTPServer]
-directory=/home/pi/MissionControl
-command=python -m SimpleHTTPServer
-autostart=true
-autorestart=true
-startsecs=5
-startretries=10
-user=pi
-stdout_logfile=/var/log/SimpleHTTPServer.log
-stdout_logfile_maxbytes=1MB
-stdout_logfile_backups=10
-stdout_capture_maxbytes=1MB
-stderr_logfile=/var/log/SimpleHTTPServer.log
-stderr_logfile_maxbytes=1MB
-stderr_logfile_backups=10
-stderr_capture_maxbytes=1MB
-environment=HOME="/home/pi", USER="pi"
-```
-
-```bash
 sudo supervisord -c /etc/supervisord.conf
 ```
 
