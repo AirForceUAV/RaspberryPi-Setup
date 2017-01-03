@@ -32,10 +32,8 @@ sudo apt full-upgrade
 Install some packages
 
 ```bash
-sudo apt-get install rpi-update git vim tmux gstreamer1.0 gstreamer1.0-libav zsh
+sudo apt-get install rpi-update git vim tmux gstreamer1.0 gstreamer1.0-libav redis-server zsh
 ```
-
-//Need Mosquitto Redis
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -53,6 +51,7 @@ Update the firmware
 ```bash
 sudo rpi-update
 sudo reboot
+sudo apt-get autoclean
 sudo apt-get autoremove
 ```
 
