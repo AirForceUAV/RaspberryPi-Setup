@@ -18,8 +18,6 @@ electron ~/MissionControl
 ##Supervisor
 
 ```bash
-sudo apt-get install python-setuptools python-dev build-essential
-sudo easy_install supervisor
 sudo -i
 echo_supervisord_conf > /etc/supervisord.conf
 su pi
