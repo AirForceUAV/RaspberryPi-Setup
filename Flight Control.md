@@ -183,10 +183,10 @@ pip show protobuf
 ```
 Compile *.proto ,ouput for python
 
-protoc -I=$SRC_DIR --python_out=$DST_DIR $SRC_DIR/addressbook.proto
+protoc -I=$SRC_DIR --python_out=$DST_DIR $SRC_DIR/FlightLog.proto
 
 example:
 ```bash
-protoc -I=. --python_out=. addressbook.proto
+protoc -I=. --python_out=. FlightLog.proto
 ```
 This generates addressbook_pb2.py in your specified destination directory.
