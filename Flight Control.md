@@ -1,7 +1,7 @@
 =========================================================
 # RaspberryPi For Flight Control
 =========================================================
-[![Build Status](https://travis-ci.org/google/protobuf.svg?branch=master)](https://github.com/AirForceUAV/Unicorn)
+[![Build Status](https://ci.appveyor.com/api/projects/status/73ctee6ua4w2ruin?svg=true)](https://github.com/AirForceUAV/Unicorn)
 
 Be Companion Computer for FlightController
 ## Hardware
