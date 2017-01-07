@@ -132,7 +132,7 @@ sudo vim /etc/udev/rules.d/10-local.rules
 
     SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATT{port_number}=="0",SYMLINK="GPS"
 
-    SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{port_number}=="0",SYMLINK="compass"
+    SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{port_number}=="0",SYMLINK="sbus"
 
     SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATT{port_number}=="0",SYMLINK="IMU"
 
