@@ -1,5 +1,5 @@
 =========================================================
-# RaspberryPi For Flight Control |build-status| |docs|
+# RaspberryPi For Flight Control
 =========================================================
 [![Build Status](https://travis-ci.org/google/protobuf.svg?branch=master)](https://github.com/AirForceUAV/Unicorn)
 
