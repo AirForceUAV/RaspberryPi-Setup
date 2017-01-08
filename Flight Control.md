@@ -135,6 +135,8 @@ sudo vim /etc/udev/rules.d/10-local.rules
 ### Add variation,Like:
 
     SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATT{port_number}=="0",SYMLINK="compass"
+    
+    SUBSYSTEMS=="usb-serial",DRIVERS=="pl2303",ATT{port_number}=="0",SYMLINK="compass"
 
     SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{port_number}=="0",SYMLINK="sbus"
 
