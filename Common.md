@@ -78,49 +78,6 @@ git pull            --从远程仓库pull最新代码
 
 ```
 
-## Golang
-Download latest ARM version golang from 
-[Golang Release Page](https://golang.org/dl/)
-
-```bash
-scp /Users/YogurtShen/Downloads/go1.7.4.linux-armv6l.tar.gz pi@192.168.1.20:~
-
-sudo tar -C /usr/local -xzf go1.7.4.linux-armv6l.tar.gz
-
-sudo vim .zshrc
-```
-
-Add two lines at bottom
-
-```bash
-export GOPATH=$HOME/Go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-```
-
-```bash
-source .zshrc
-```
-
-Use below command to test
-
-```bash
-go version
-echo $GOPATH
-```
-
-Then create corresponding dirs
-
-```bash
-cd
-mkdir Go
-cd Go/
-mkdir src pkg bin
-cd src
-git clone git@github.com:AirForceUAV/DataProxy.git
-cd DataProxy
-./DataProxy start -t (fc or mc)
-```
-
 ##Supervisor
 
 ```bash
