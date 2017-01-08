@@ -30,6 +30,9 @@ sudo apt-get install python-dev python-pip
 sudo pip install paho-mqtt
 sudo pip install pynmea2
 sudo pip install apscheduler
+git clone git@github.com:matplotlib/matplotlib.git
+cd matplotlib
+python setup.py install
 ```
 
 Install package for pixhawk
