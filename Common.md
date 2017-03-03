@@ -3,7 +3,7 @@ For Both Flight Control & Mission Control
 
 Hardware: Raspberry Pi 3 B
 
-OS: [RASPBIAN JESSIE LITE (2016-11-25)](https://www.raspberrypi.org/downloads/raspbian/)
+OS: [RASPBIAN JESSIE LITE (2017-1-11)](https://www.raspberrypi.org/downloads/raspbian/)
 
 Note: [INSTALLING OPERATING SYSTEM IMAGES](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)
 
