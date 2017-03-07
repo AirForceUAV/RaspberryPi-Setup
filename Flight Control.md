@@ -194,3 +194,14 @@ example:
 protoc -I=. --python_out=. FlightLog.proto
 ```
 This generates addressbook_pb2.py in your specified destination directory.
+
+## gRPC
+
+Install package
+```bash
+sudo pip install grpcio grpcio-tools
+```
+Generate gRPC code
+```bash
+$ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. protos/avoid.proto
+```
