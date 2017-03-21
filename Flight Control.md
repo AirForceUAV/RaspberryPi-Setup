@@ -27,10 +27,11 @@ Install common package
 sudo apt-get install python-dev python-pip
 ```
 ```python
+sudo pip install pyserial numpy pygame
 sudo pip install paho-mqtt
 sudo pip install pynmea2
 sudo pip install apscheduler
-sudo pip install toml,keyboard,colorlog
+sudo pip install toml keyboard colorlog
 git clone git@github.com:matplotlib/matplotlib.git
 cd matplotlib
 python setup.py install
