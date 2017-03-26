@@ -133,10 +133,17 @@ Edit *.rules
 ```bash
 sudo vim /etc/udev/rules.d/10-local.rules
 ```
-
 ### Add variation,Like:
+
+piUSB KERNELS:
+1-1.2   1-1.4
+1-1.3   1-1.5
+
+USBHUB KERNELS:
+1-1.2.4 1-1.2.3 1-1.2.2 1-1.2.1
+
 ```bash
- SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATTRS{port_number}=="0",SYMLINK="compass"    
+ SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATTRS{port_number}=="0"，SYMLINK="compass"    
  SUBSYSTEMS=="usb-serial",DRIVERS=="pl2303",ATTRS{port_number}=="0",SYMLINK="GPS"
  SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{port_number}=="0",SYMLINK="sbus"
  SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATTRS{port_number}=="0",SYMLINK="IMU"
