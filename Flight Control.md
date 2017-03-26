@@ -136,7 +136,9 @@ sudo vim /etc/udev/rules.d/10-local.rules
 ### Add variation,Like:
 
 piUSB KERNELS:
+
 1-1.2   1-1.4
+
 1-1.3   1-1.5
 
 USBHUB KERNELS:
