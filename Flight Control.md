@@ -144,11 +144,12 @@ piUSB KERNELS:
 USBHUB KERNELS:
 1-1.2.4 1-1.2.3 1-1.2.2 1-1.2.1
 
-```bash  
- SUBSYSTEMS=="usb-serial",DRIVERS=="pl2303",ATTRS{port_number}=="0",SYMLINK="GPS"
- SUBSYSTEMS=="usb-serial",DRIVERS=="ftdi_sio",ATTRS{latency_timer}=="1",ATTRS{port_number}=="0",SYMLINK="sbus"
- SUBSYSTEMS=="usb-serial",DRIVERS=="ch341-uart",ATTRS{port_number}=="0",SYMLINK="compass"
- SUBSYSTEMS=="usb-serial",DRIVERS=="cp210x",ATTRS{port_number}=="0"，SYMLINK="lidar"    
+```bash
+ KERNELS=="1-1.2",SUBSYSTEMS=="usb",DRIVERS=="usb",SYMLINK="sbus"
+ KERNELS=="1-1.5.4",SUBSYSTEMS=="usb",DRIVERS=="usb",SYMLINK="compass"
+ KERNELS=="1-1.5.3",SUBSYSTEMS=="usb",DRIVERS=="usb",SYMLINK="GPS"
+ KERNELS=="1-1.5.2",SUBSYSTEMS=="usb",DRIVERS=="usb",SYMLINK="IMU"
+ KERNELS=="1-1.4",SUBSYSTEMS=="usb",DRIVERS=="usb",SYMLINK="lidar" 
 ```
 Take effect
 ```bash 
