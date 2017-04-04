@@ -159,7 +159,7 @@ or  replug (recommand)
 
 ### Display whether is successful
 ```bash
-ll /dev
+ll /dev | grep ttyUSB
 ```
 You will see someting like:
 
