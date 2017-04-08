@@ -32,6 +32,7 @@ sudo pip install paho-mqtt
 sudo pip install pynmea2
 sudo pip install apscheduler
 sudo pip install toml keyboard colorlog
+sudo pip install protobuf
 git clone git@github.com:matplotlib/matplotlib.git
 cd matplotlib
 python setup.py install
